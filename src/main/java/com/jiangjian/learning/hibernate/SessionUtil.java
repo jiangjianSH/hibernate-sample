@@ -6,6 +6,9 @@ import com.jiangjian.learning.hibernate.annotations.where.ClientAccount;
 import com.jiangjian.learning.hibernate.columntransformer.Savings;
 import com.jiangjian.learning.hibernate.customebasictype.BitSetType;
 import com.jiangjian.learning.hibernate.customebasictype.Product;
+import com.jiangjian.learning.hibernate.embeded.Book;
+import com.jiangjian.learning.hibernate.embeded.Country;
+import com.jiangjian.learning.hibernate.embeded.Publisher;
 import com.jiangjian.learning.hibernate.generatedproperties.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -40,7 +43,10 @@ public class SessionUtil<T> {
                 .addAnnotatedClass(Savings.class)
                 .addAnnotatedClass(Account.class)
                 .addAnnotatedClass(Client.class)
-                .addAnnotatedClass(ClientAccount.class);
+                .addAnnotatedClass(ClientAccount.class)
+                .addAnnotatedClass(Book.class)
+                .addAnnotatedClass(Publisher.class)
+                .addAnnotatedClass(Country.class);
 
         sessionFactory = configuration.buildSessionFactory();
 
